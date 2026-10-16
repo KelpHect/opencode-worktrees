@@ -1,0 +1,6 @@
+node_modules
+e2e/
+e2e-artifacts/
+e2e-scratch/
+ref/
+*.log

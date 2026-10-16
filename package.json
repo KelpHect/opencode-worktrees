@@ -1,0 +1,46 @@
+{
+  "name": "opencode-worktrees",
+  "version": "0.1.0",
+  "description": "OpenCode v2 plugin that runs selected subagents in isolated git worktrees branched from the default branch, so parallel editing agents never collide.",
+  "type": "module",
+  "license": "MIT",
+  "author": "KelpHect",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KelpHect/opencode-worktrees.git"
+  },
+  "homepage": "https://github.com/KelpHect/opencode-worktrees#readme",
+  "bugs": {
+    "url": "https://github.com/KelpHect/opencode-worktrees/issues"
+  },
+  "keywords": [
+    "opencode",
+    "opencode-plugin",
+    "git",
+    "worktree",
+    "subagents",
+    "parallel"
+  ],
+  "main": "index.ts",
+  "exports": {
+    ".": "./index.ts"
+  },
+  "files": [
+    "index.ts",
+    "src",
+    "skills",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "bun test",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@opencode/plugin": "2.0.30"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0",
+    "@types/bun": "latest"
+  }
+}
