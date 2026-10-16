@@ -54,6 +54,6 @@ To send follow-up work to the same isolated agent, call `subagent` again with it
 ## Correct vs incorrect
 
 - Correct: three parallel isolated agents, each owning one module, each committing on its branch; you merge them one by one and run the tests after each merge.
-- Incorrect: telling an isolated agent to "edit F:\repo\src\x.c" (the main checkout path). Give paths relative to the repo root; the agent resolves them inside its worktree.
+- Incorrect: telling an isolated agent to "edit /path/to/repo/src/x.c" (an absolute path in the main checkout). Give paths relative to the repo root; the agent resolves them inside its worktree.
 - Incorrect: telling an isolated agent to `git push`, `git checkout main` or merge into the main checkout itself. Integration is your job.
 - Incorrect: assuming the agent sees your uncommitted edits. It starts from the default branch.
