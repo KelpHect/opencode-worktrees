@@ -1,6 +1,6 @@
 {
   "name": "opencode-worktrees",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "OpenCode v2 plugin that runs selected subagents in isolated git worktrees branched from the default branch, so parallel editing agents never collide.",
   "type": "module",
   "license": "MIT",

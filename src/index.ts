@@ -62,7 +62,8 @@ export default Plugin.define({
       },
       agentModel: async (agent) => {
         const info: any = await ctx.agent.get({ agentID: agent }).catch(() => undefined)
-        return info?.model?.id && info?.model?.providerID ? info.model : undefined
+        const model = info?.data?.model ?? info?.model
+        return model?.id && model?.providerID ? model : undefined
       },
       isolatedAgents,
       log: (level, message, extra) => {

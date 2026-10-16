@@ -89,14 +89,14 @@ describe("prepare (new isolated subagent)", () => {
     expect(t.store.get("wt/index")).toEqual(["ses_child1"])
   })
 
-  test("model precedence: explicit > agent config > parent", async () => {
+  test("model precedence: explicit > agent config > server default", async () => {
     const t = setup()
     await t.manager.prepare("p", { agent: "worker", prompt: "x" })
     expect(t.created[0].model).toEqual({ providerID: "opencode-go", id: "agent-model" })
     const t2 = setup()
     t2.host.agentModel = async () => undefined
     await new WorktreeManager(t2.host).prepare("p", { agent: "worker", prompt: "x" })
-    expect(t2.created[0].model).toEqual({ providerID: "p", id: "parent-model" })
+    expect(t2.created[0].model).toBeUndefined()
   })
 
   test("non-isolated agents and foreign continuations are left alone", async () => {

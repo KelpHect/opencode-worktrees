@@ -292,7 +292,7 @@ export class WorktreeManager {
     }
     await this.addWorktree(state)
     try {
-      const model = (input.model ? parseModelRef(input.model) : undefined) ?? (await this.host.agentModel(agent)) ?? parent.model
+      const model = (input.model ? parseModelRef(input.model) : undefined) ?? (await this.host.agentModel(agent))
       const child = await this.host.session.create({ parentID: callerSessionID, agent, title: input.description, ...(model ? { model } : {}) })
       state.sessionID = child.id
       await this.save(state)

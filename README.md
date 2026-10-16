@@ -26,12 +26,12 @@ Tested with OpenCode 2.0.30 (`@opencode/plugin` 2.0.30). Requires `git`.
 opencode plugin add github:KelpHect/opencode-worktrees
 ```
 
-Pin a release with `github:KelpHect/opencode-worktrees#v0.2.1`. Manual configuration:
+Pin a release with `github:KelpHect/opencode-worktrees#v0.2.2`. Manual configuration:
 
 ```jsonc
 {
   "plugins": [
-    { "package": "github:KelpHect/opencode-worktrees#v0.2.1", "options": { "isolatedAgents": ["worker"] } }
+    { "package": "github:KelpHect/opencode-worktrees#v0.2.2", "options": { "isolatedAgents": ["worker"] } }
   ]
 }
 ```
