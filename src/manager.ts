@@ -108,7 +108,7 @@ export function isolationNote(state: WtState, newSession: boolean): string {
     `- Worktree path: ${state.path}`,
     `- Branch: ${state.branch} (created from ${state.baseRef} @ ${state.baseSha.slice(0, 8)})`,
     `- Work and run commands only inside this path. The main checkout at ${state.repoRoot} is off limits: edits and git commands against it are refused.`,
-    "- When you are done, commit your work on this branch (git add -A && git commit). If you change nothing, the worktree is removed automatically.",
+    "- When you are done, commit your work on this branch, staging only the files you changed (no `git add -A` / `git add .`). If you change nothing, the worktree is removed automatically.",
     `- End your report with the branch name (${state.branch}) and a one-line \`git diff --stat ${state.baseSha.slice(0, 8)}..HEAD\` summary.`,
     "",
     "Task:",

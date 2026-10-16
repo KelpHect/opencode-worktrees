@@ -82,6 +82,8 @@ describe("prepare (new isolated subagent)", () => {
     expect(out!.model).toBeUndefined()
     expect(out!.prompt).toStartWith("You are a subagent spawned by another session.")
     expect(out!.prompt).toContain(state.path)
+    expect(out!.prompt).toContain("staging only the files you changed")
+    expect(out!.prompt).not.toContain("git add -A &&")
     expect(out!.prompt).toEndWith("TASK")
     expect(t.store.get("wt/ses_child1").repoRoot).toBe(state.repoRoot)
     expect(t.store.get("wt/index")).toEqual(["ses_child1"])
